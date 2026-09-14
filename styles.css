@@ -1,0 +1,213 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f5f7fb;
+  color: #222;
+}
+
+header {
+  background: #283593;
+  color: #fff;
+  padding: 1rem 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+main {
+  max-width: 1100px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #283593;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+label span {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+input[type="date"],
+select,
+input[type="number"] {
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  min-width: 140px;
+}
+
+.spots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+
+.spot-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  background: #fafafa;
+}
+
+.spot-title {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.spot-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.spot-row label {
+  font-size: 0.8rem;
+}
+
+.spot-row input[type="number"] {
+  width: 60px;
+}
+
+.checkbox-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-start;
+}
+
+button {
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#saveMatchBtn {
+  background: #283593;
+  color: #fff;
+}
+
+#clearAllBtn {
+  background: #c62828;
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 0.35rem 0.5rem;
+  text-align: center;
+}
+
+th {
+  background: #e8eaf6;
+  font-weight: 600;
+}
+
+.tie-note {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  color: #c62828;
+}
+
+.match-item {
+  border-bottom: 1px solid #eee;
+  padding: 0.4rem 0;
+  font-size: 0.85rem;
+}
+
+.match-header {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.match-header button {
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.match-header .edit-btn {
+  background: #0277bd;
+  color: #fff;
+}
+
+.match-header .delete-btn {
+  background: #c62828;
+  color: #fff;
+}
+
+.match-spots {
+  margin-top: 0.25rem;
+  padding-left: 0.75rem;
+}
+
+.match-spot-line {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 640px) {
+  .row {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tennis Seeding – Match Entry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Tennis Match Entry & Seeding</h1>
+    </header>
+
+    <main>
+        <!-- Match Info -->
+        <section class="card">
+            <h2>Match Information</h2>
+            <div class="row">
+                <label for="matchDate"><span>Date</span>
+                    <input type="date" id="matchDate">
+                </label>
+                <label for="teamASelect"><span>Team A</span>
+                    <select id="teamASelect"></select>
+                </label>
+                <label for="teamBSelect"><span>Team B</span>
+                    <select id="teamBSelect"></select>
+                </label>
+            </div>
+        </section>
+
+        <!-- Varsity Section -->
+        <section class="card">
+            <h2>Varsity (plays to 8)</h2>
+            <div id="varsitySpots" class="spots-grid"></div>
+        </section>
+
+        <!-- JV Section -->
+        <section class="card">
+            <h2>JV (plays to 6)</h2>
+            <div id="jvSpots" class="spots-grid"></div>
+        </section>
+
+        <section class="card actions">
+            <button id="saveMatchBtn">Save Entire Match</button>
+            <button id="clearAllBtn">Clear All Data</button>
+        </section>
+
+        <!-- Seeding Display -->
+        <section class="card">
+            <h2>Varsity Seeds</h2>
+            <div id="varsitySeeds"></div>
+        </section>
+
+        <section class="card">
+            <h2>JV Seeds</h2>
+            <div id="jvSeeds"></div>
+        </section>
+
+        <!-- Matches List -->
+        <section class="card">
+            <h2>Saved Matches</h2>
+            <div id="matchesList"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
