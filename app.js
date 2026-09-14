@@ -1,40 +1,129 @@
-// ----- CONFIG -----
+// --------------------------------------------------
+// CONFIG — DIVISIONS + TEAMS
+// --------------------------------------------------
 
-const teams = [
-  "Farmington",
-  "Bountiful",
-  "Davis",
-  "Layton",
-  "Weber",
-];
+const divisions = {
+  "MS Boys": [
+    "Bountiful/Viewmont MS Boys",
+    "Farmington MS Boys",
+    "Davis/Layton MS Boys",
+    "Northridge/CF/SY MS Boys"
+  ],
+  "MS Girls": [
+    "Bountiful MS Girls",
+    "Viewmont MS Girls",
+    "Farmington MS Girls",
+    "Davis/Layton MS Girls",
+    "Northridge/CF/SY MS Girls"
+  ],
+  "Orange Ball": [
+    "Bountiful Orange",
+    "Farmington/Centerville Orange",
+    "Kaysville Orange",
+    "Layton Orange",
+    "Clearfield Orange",
+    "North Ogden Orange",
+    "Pleasant View Orange"
+  ],
+  "High School": [
+    "Centerville/Farmington/BO HS",
+    "Kaysville/Layton HS",
+    "Weber HS",
+    "Fremont HS"
+  ]
+};
 
-const spots = [
-  { id: "V1S", label: "Varsity 1st Singles", level: "varsity", targetGames: 8 },
-  { id: "V2S", label: "Varsity 2nd Singles", level: "varsity", targetGames: 8 },
-  { id: "V1D", label: "Varsity 1st Doubles", level: "varsity", targetGames: 8 },
-  { id: "V2D", label: "Varsity 2nd Doubles", level: "varsity", targetGames: 8 },
-  { id: "V3D", label: "Varsity 3rd Doubles", level: "varsity", targetGames: 8 },
-  { id: "J1S", label: "JV 1st Singles", level: "jv", targetGames: 6 },
-  { id: "J2S", label: "JV 2nd Singles", level: "jv", targetGames: 6 },
-  { id: "J1D", label: "JV 1st Doubles", level: "jv", targetGames: 6 },
-  { id: "J2D", label: "JV 2nd Doubles", level: "jv", targetGames: 6 },
-  { id: "J3D", label: "JV 3rd Doubles", level: "jv", targetGames: 6 }
-];
+// --------------------------------------------------
+// DIVISION FORMATS
+// --------------------------------------------------
+
+const divisionFormats = {
+  "MS Boys": ["V1S", "V2S", "V1D", "V2D", "V3D", "J1S", "J2S", "J1D", "J2D", "J3D"],
+  "MS Girls": ["V1S", "V2S", "V1D", "V2D", "V3D", "J1S", "J2S", "J1D", "J2D", "J3D"],
+  "Orange Ball": ["OB1S", "OB2S", "OB1D", "OB2D", "OB3D", "OBJ1D", "OBJ2D", "OBJ3D", "OBJ4D"],
+  "High School": [
+    "HS1S", "HS2S", "HS3S", "HS4S", "HS5S", "HS6S",
+    "HSJ1S", "HSJ2S", "HSJ3S", "HSJ4S", "HSJ5S", "HSJ6S",
+    "HS1D", "HS2D", "HS3D",
+    "HSJ1D", "HSJ2D", "HSJ3D"
+  ]
+};
+
+// --------------------------------------------------
+// SPOT DEFINITIONS
+// --------------------------------------------------
+
+const spotDefinitions = {
+  // MS Varsity
+  "V1S": { label: "Varsity 1st Singles", level: "varsity", targetGames: 8 },
+  "V2S": { label: "Varsity 2nd Singles", level: "varsity", targetGames: 8 },
+  "V1D": { label: "Varsity 1st Doubles", level: "varsity", targetGames: 8 },
+  "V2D": { label: "Varsity 2nd Doubles", level: "varsity", targetGames: 8 },
+  "V3D": { label: "Varsity 3rd Doubles", level: "varsity", targetGames: 8 },
+
+  // MS JV
+  "J1S": { label: "JV 1st Singles", level: "jv", targetGames: 6 },
+  "J2S": { label: "JV 2nd Singles", level: "jv", targetGames: 6 },
+  "J1D": { label: "JV 1st Doubles", level: "jv", targetGames: 6 },
+  "J2D": { label: "JV 2nd Doubles", level: "jv", targetGames: 6 },
+  "J3D": { label: "JV 3rd Doubles", level: "jv", targetGames: 6 },
+
+  // Orange Ball Varsity
+  "OB1S": { label: "Varsity 1st Singles", level: "varsity", targetGames: 6 },
+  "OB2S": { label: "Varsity 2nd Singles", level: "varsity", targetGames: 6 },
+  "OB1D": { label: "Varsity 1st Doubles", level: "varsity", targetGames: 6 },
+  "OB2D": { label: "Varsity 2nd Doubles", level: "varsity", targetGames: 6 },
+  "OB3D": { label: "Varsity 3rd Doubles", level: "varsity", targetGames: 6 },
+
+  // Orange Ball JV
+  "OBJ1D": { label: "JV 1st Doubles", level: "jv", targetGames: 6 },
+  "OBJ2D": { label: "JV 2nd Doubles", level: "jv", targetGames: 6 },
+  "OBJ3D": { label: "JV 3rd Doubles", level: "jv", targetGames: 6 },
+  "OBJ4D": { label: "JV 4th Doubles", level: "jv", targetGames: 6 },
+
+  // High School Varsity Singles
+  "HS1S": { label: "Varsity 1st Singles", level: "varsity", targetGames: 8 },
+  "HS2S": { label: "Varsity 2nd Singles", level: "varsity", targetGames: 8 },
+  "HS3S": { label: "Varsity 3rd Singles", level: "varsity", targetGames: 8 },
+  "HS4S": { label: "Varsity 4th Singles", level: "varsity", targetGames: 8 },
+  "HS5S": { label: "Varsity 5th Singles", level: "varsity", targetGames: 8 },
+  "HS6S": { label: "Varsity 6th Singles", level: "varsity", targetGames: 8 },
+
+  // High School JV Singles
+  "HSJ1S": { label: "JV 1st Singles", level: "jv", targetGames: 8 },
+  "HSJ2S": { label: "JV 2nd Singles", level: "jv", targetGames: 8 },
+  "HSJ3S": { label: "JV 3rd Singles", level: "jv", targetGames: 8 },
+  "HSJ4S": { label: "JV 4th Singles", level: "jv", targetGames: 8 },
+  "HSJ5S": { label: "JV 5th Singles", level: "jv", targetGames: 8 },
+  "HSJ6S": { label: "JV 6th Singles", level: "jv", targetGames: 8 },
+
+  // High School Varsity Doubles
+  "HS1D": { label: "Varsity 1st Doubles", level: "varsity", targetGames: 8 },
+  "HS2D": { label: "Varsity 2nd Doubles", level: "varsity", targetGames: 8 },
+  "HS3D": { label: "Varsity 3rd Doubles", level: "varsity", targetGames: 8 },
+
+  // High School JV Doubles
+  "HSJ1D": { label: "JV 1st Doubles", level: "jv", targetGames: 8 },
+  "HSJ2D": { label: "JV 2nd Doubles", level: "jv", targetGames: 8 },
+  "HSJ3D": { label: "JV 3rd Doubles", level: "jv", targetGames: 8 }
+};
 
 const STORAGE_KEY = "tennisSeedingMatches";
-
-// ----- STATE -----
-
+let currentDivision = "MS Boys";
 let matches = [];
 let editMode = false;
 let editMatchId = null;
 
-// ----- INIT -----
+// --------------------------------------------------
+// INIT
+// --------------------------------------------------
 
 document.addEventListener("DOMContentLoaded", () => {
-  initTeamSelects();
+  setupDivisionButtons();
   loadMatches();
+  loadTeamsForDivision(currentDivision);
   renderSpotInputs();
+  updateDivisionHeader();
   renderAll();
 
   document.getElementById("saveMatchBtn").addEventListener("click", () => {
@@ -45,125 +134,173 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("clearAllBtn").addEventListener("click", onClearAll);
 });
 
-// ----- TEAM SELECTS -----
+// --------------------------------------------------
+// DIVISION BUTTONS
+// --------------------------------------------------
 
-function initTeamSelects() {
+function setupDivisionButtons() {
+  const buttons = document.querySelectorAll(".division-btn");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentDivision = btn.dataset.division;
+
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      loadTeamsForDivision(currentDivision);
+      clearSpotInputs();
+      renderSpotInputs();
+      updateDivisionHeader();
+      renderAll();
+    });
+  });
+
+  document
+    .querySelector(`.division-btn[data-division="${currentDivision}"]`)
+    .classList.add("active");
+}
+
+// --------------------------------------------------
+// UPDATE DIVISION HEADER
+// --------------------------------------------------
+
+function updateDivisionHeader() {
+  const title = document.getElementById("divisionTitle");
+  title.textContent = `${currentDivision} Division`;
+}
+
+// --------------------------------------------------
+// LOAD TEAMS FOR DIVISION
+// --------------------------------------------------
+
+function loadTeamsForDivision(division) {
   const teamASelect = document.getElementById("teamASelect");
   const teamBSelect = document.getElementById("teamBSelect");
 
-  teams.forEach(team => {
+  teamASelect.innerHTML = "";
+  teamBSelect.innerHTML = "";
+
+  divisions[division].forEach(team => {
     const optA = document.createElement("option");
     optA.value = team;
     optA.textContent = team;
-    teamASelect.appendChild(optA);
 
     const optB = document.createElement("option");
     optB.value = team;
     optB.textContent = team;
+
+    teamASelect.appendChild(optA);
     teamBSelect.appendChild(optB);
   });
 
   teamASelect.selectedIndex = 0;
-  teamBSelect.selectedIndex = teams.length > 1 ? 1 : 0;
+  teamBSelect.selectedIndex = divisions[division].length > 1 ? 1 : 0;
 }
 
-// ----- STORAGE -----
-
-function loadMatches() {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  matches = raw ? JSON.parse(raw) : [];
-}
-
-function saveMatches() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(matches));
-}
-
-// ----- SPOT INPUT RENDERING -----
+// --------------------------------------------------
+// RENDER SPOT INPUTS (BY DIVISION FORMAT)
+// --------------------------------------------------
 
 function renderSpotInputs() {
   const varsityContainer = document.getElementById("varsitySpots");
   const jvContainer = document.getElementById("jvSpots");
+
   varsityContainer.innerHTML = "";
   jvContainer.innerHTML = "";
 
-  spots.forEach(spot => {
-    const card = document.createElement("div");
-    card.className = "spot-card";
-    card.dataset.spotId = spot.id;
+  const format = divisionFormats[currentDivision];
 
-    const title = document.createElement("div");
-    title.className = "spot-title";
-    title.textContent = spot.label;
-    card.appendChild(title);
+  format.forEach(spotId => {
+    const spot = spotDefinitions[spotId];
+    const card = createSpotCard(spotId, spot);
 
-    const scoreRow = document.createElement("div");
-    scoreRow.className = "spot-row";
-
-    const labelA = document.createElement("label");
-    labelA.textContent = "Team A games";
-    const inputA = document.createElement("input");
-    inputA.type = "number";
-    inputA.min = "0";
-    inputA.step = "1";
-    inputA.dataset.role = "gamesA";
-    labelA.appendChild(inputA);
-
-    const labelB = document.createElement("label");
-    labelB.textContent = "Team B games";
-    const inputB = document.createElement("input");
-    inputB.type = "number";
-    inputB.min = "0";
-    inputB.step = "1";
-    inputB.dataset.role = "gamesB";
-    labelB.appendChild(inputB);
-
-    scoreRow.appendChild(labelA);
-    scoreRow.appendChild(labelB);
-    card.appendChild(scoreRow);
-
-    const cbRow = document.createElement("div");
-    cbRow.className = "checkbox-row";
-
-    const dnpLabel = document.createElement("label");
-    const dnpCb = document.createElement("input");
-    dnpCb.type = "checkbox";
-    dnpCb.dataset.role = "dnp";
-    dnpLabel.appendChild(dnpCb);
-    dnpLabel.appendChild(document.createTextNode("Did Not Play"));
-
-    const defALabel = document.createElement("label");
-    const defACb = document.createElement("input");
-    defACb.type = "checkbox";
-    defACb.dataset.role = "defaultA";
-    defALabel.appendChild(defACb);
-    defALabel.appendChild(document.createTextNode("Team A defaulted"));
-
-    const defBLabel = document.createElement("label");
-    const defBCb = document.createElement("input");
-    defBCb.type = "checkbox";
-    defBCb.dataset.role = "defaultB";
-    defBLabel.appendChild(defBCb);
-    defBLabel.appendChild(document.createTextNode("Team B defaulted"));
-
-    defACb.addEventListener("change", () => {
-      if (defACb.checked) defBCb.checked = false;
-    });
-    defBCb.addEventListener("change", () => {
-      if (defBCb.checked) defACb.checked = false;
-    });
-
-    cbRow.appendChild(dnpLabel);
-    cbRow.appendChild(defALabel);
-    cbRow.appendChild(defBLabel);
-
-    card.appendChild(cbRow);
-
-    if (spot.level === "varsity") varsityContainer.appendChild(card);
-    else jvContainer.appendChild(card);
+    if (spot.level === "varsity") {
+      varsityContainer.appendChild(card);
+    } else if (spot.level === "jv") {
+      jvContainer.appendChild(card);
+    }
   });
 }
 
-// ----- SAVE MATCH (NEW MATCH) -----
+function createSpotCard(spotId, spot) {
+  const card = document.createElement("div");
+  card.className = "spot-card";
+  card.dataset.spotId = spotId;
+
+  const title = document.createElement("div");
+  title.className = "spot-title";
+  title.textContent = spot.label;
+  card.appendChild(title);
+
+  const scoreRow = document.createElement("div");
+  scoreRow.className = "spot-row";
+
+  const labelA = document.createElement("label");
+  labelA.textContent = "Team A games";
+  const inputA = document.createElement("input");
+  inputA.type = "number";
+  inputA.min = "0";
+  inputA.step = "1";
+  inputA.dataset.role = "gamesA";
+  labelA.appendChild(inputA);
+
+  const labelB = document.createElement("label");
+  labelB.textContent = "Team B games";
+  const inputB = document.createElement("input");
+  inputB.type = "number";
+  inputB.min = "0";
+  inputB.step = "1";
+  inputB.dataset.role = "gamesB";
+  labelB.appendChild(inputB);
+
+  scoreRow.appendChild(labelA);
+  scoreRow.appendChild(labelB);
+  card.appendChild(scoreRow);
+
+  const cbRow = document.createElement("div");
+  cbRow.className = "checkbox-row";
+
+  const dnpLabel = document.createElement("label");
+  const dnpCb = document.createElement("input");
+  dnpCb.type = "checkbox";
+  dnpCb.dataset.role = "dnp";
+  dnpLabel.appendChild(dnpCb);
+  dnpLabel.appendChild(document.createTextNode("Did Not Play"));
+
+  const defALabel = document.createElement("label");
+  const defACb = document.createElement("input");
+  defACb.type = "checkbox";
+  defACb.dataset.role = "defaultA";
+  defALabel.appendChild(defACb);
+  defALabel.appendChild(document.createTextNode("Team A defaulted"));
+
+  const defBLabel = document.createElement("label");
+  const defBCb = document.createElement("input");
+  defBCb.type = "checkbox";
+  defBCb.dataset.role = "defaultB";
+  defBLabel.appendChild(defBCb);
+  defBLabel.appendChild(document.createTextNode("Team B defaulted"));
+
+  defACb.addEventListener("change", () => {
+    if (defACb.checked) defBCb.checked = false;
+  });
+  defBCb.addEventListener("change", () => {
+    if (defBCb.checked) defACb.checked = false;
+  });
+
+  cbRow.appendChild(dnpLabel);
+  cbRow.appendChild(defALabel);
+  cbRow.appendChild(defBLabel);
+
+  card.appendChild(cbRow);
+
+  return card;
+}
+
+// --------------------------------------------------
+// SAVE / EDIT / DELETE MATCHES
+// --------------------------------------------------
 
 function onSaveMatch() {
   const date = document.getElementById("matchDate").value || "";
@@ -177,8 +314,8 @@ function onSaveMatch() {
 
   const matchSpots = {};
 
-  spots.forEach(spot => {
-    const card = document.querySelector(`.spot-card[data-spot-id="${spot.id}"]`);
+  divisionFormats[currentDivision].forEach(spotId => {
+    const card = document.querySelector(`.spot-card[data-spot-id="${spotId}"]`);
     const gamesAInput = card.querySelector('input[data-role="gamesA"]');
     const gamesBInput = card.querySelector('input[data-role="gamesB"]');
     const dnpCb = card.querySelector('input[data-role="dnp"]');
@@ -193,7 +330,7 @@ function onSaveMatch() {
     let gamesB = gamesBInput.value ? parseInt(gamesBInput.value, 10) : null;
 
     let result = {
-      spotId: spot.id,
+      spotId,
       dnp,
       defaultA,
       defaultB,
@@ -237,11 +374,12 @@ function onSaveMatch() {
       }
     }
 
-    matchSpots[spot.id] = result;
+    matchSpots[spotId] = result;
   });
 
   const match = {
     id: Date.now(),
+    division: currentDivision,
     date,
     teamA,
     teamB,
@@ -253,8 +391,6 @@ function onSaveMatch() {
   clearSpotInputs();
   renderAll();
 }
-
-// ----- CLEAR INPUTS -----
 
 function clearSpotInputs() {
   document.querySelectorAll(".spot-card").forEach(card => {
@@ -268,16 +404,12 @@ function clearSpotInputs() {
   document.getElementById("saveMatchBtn").textContent = "Save Entire Match";
 }
 
-// ----- CLEAR ALL -----
-
-function onClearAll() {
-  if (!confirm("Clear all saved matches and standings?")) return;
-  matches = [];
+function onDeleteMatch(matchId) {
+  if (!confirm("Delete this match?")) return;
+  matches = matches.filter(m => m.id !== matchId);
   saveMatches();
   renderAll();
 }
-
-// ----- EDIT MATCH -----
 
 function onEditMatch(matchId) {
   const match = matches.find(m => m.id === matchId);
@@ -291,16 +423,14 @@ function onEditMatch(matchId) {
   document.getElementById("saveMatchBtn").textContent = "Save Edited Match";
 }
 
-// ----- LOAD MATCH INTO FORM -----
-
 function loadMatchIntoForm(match) {
   document.getElementById("matchDate").value = match.date;
   document.getElementById("teamASelect").value = match.teamA;
   document.getElementById("teamBSelect").value = match.teamB;
 
-  spots.forEach(spot => {
-    const card = document.querySelector(`.spot-card[data-spot-id="${spot.id}"]`);
-    const res = match.spots[spot.id];
+  divisionFormats[currentDivision].forEach(spotId => {
+    const card = document.querySelector(`.spot-card[data-spot-id="${spotId}"]`);
+    const res = match.spots[spotId];
 
     const gamesAInput = card.querySelector('input[data-role="gamesA"]');
     const gamesBInput = card.querySelector('input[data-role="gamesB"]');
@@ -317,8 +447,6 @@ function loadMatchIntoForm(match) {
   });
 }
 
-// ----- SAVE EDITED MATCH -----
-
 function saveEditedMatch() {
   const date = document.getElementById("matchDate").value || "";
   const teamA = document.getElementById("teamASelect").value;
@@ -331,8 +459,8 @@ function saveEditedMatch() {
 
   const matchSpots = {};
 
-  spots.forEach(spot => {
-    const card = document.querySelector(`.spot-card[data-spot-id="${spot.id}"]`);
+  divisionFormats[currentDivision].forEach(spotId => {
+    const card = document.querySelector(`.spot-card[data-spot-id="${spotId}"]`);
     const gamesAInput = card.querySelector('input[data-role="gamesA"]');
     const gamesBInput = card.querySelector('input[data-role="gamesB"]');
     const dnpCb = card.querySelector('input[data-role="dnp"]');
@@ -347,7 +475,7 @@ function saveEditedMatch() {
     let gamesB = gamesBInput.value ? parseInt(gamesBInput.value, 10) : null;
 
     let result = {
-      spotId: spot.id,
+      spotId,
       dnp,
       defaultA,
       defaultB,
@@ -391,11 +519,12 @@ function saveEditedMatch() {
       }
     }
 
-    matchSpots[spot.id] = result;
+    matchSpots[spotId] = result;
   });
 
   const updatedMatch = {
     id: editMatchId,
+    division: currentDivision,
     date,
     teamA,
     teamB,
@@ -412,18 +541,22 @@ function saveEditedMatch() {
   renderAll();
 }
 
-// ----- MATCHES LIST -----
+// --------------------------------------------------
+// MATCHES LIST
+// --------------------------------------------------
 
 function renderMatchesList() {
   const container = document.getElementById("matchesList");
   container.innerHTML = "";
 
-  if (matches.length === 0) {
-    container.textContent = "No matches saved yet.";
+  const filtered = matches.filter(m => m.division === currentDivision);
+
+  if (filtered.length === 0) {
+    container.textContent = "No matches saved yet for this division.";
     return;
   }
 
-  matches
+  filtered
     .slice()
     .sort((a, b) => a.id - b.id)
     .forEach(match => {
@@ -455,8 +588,9 @@ function renderMatchesList() {
       const spotsDiv = document.createElement("div");
       spotsDiv.className = "match-spots";
 
-      spots.forEach(spot => {
-        const res = match.spots[spot.id];
+      divisionFormats[currentDivision].forEach(spotId => {
+        const spot = spotDefinitions[spotId];
+        const res = match.spots[spotId];
         if (!res) return;
 
         const line = document.createElement("div");
@@ -481,35 +615,62 @@ function renderMatchesList() {
       container.appendChild(div);
     });
 }
-// ----- DELETE MATCH -----
 
-function onDeleteMatch(matchId) {
-  if (!confirm("Delete this match?")) return;
-  matches = matches.filter(m => m.id !== matchId);
+// --------------------------------------------------
+// STORAGE
+// --------------------------------------------------
+
+function saveMatches() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(matches));
+}
+
+function loadMatches() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) {
+    matches = [];
+    return;
+  }
+  try {
+    matches = JSON.parse(raw) || [];
+  } catch {
+    matches = [];
+  }
+}
+
+function onClearAll() {
+  if (!confirm("Clear ALL saved matches for ALL divisions?")) return;
+  matches = [];
   saveMatches();
+  clearSpotInputs();
   renderAll();
 }
 
-// ----- STANDINGS COMPUTATION -----
+// --------------------------------------------------
+// STANDINGS + SEEDS
+// --------------------------------------------------
 
 function computeStandingsBySpot() {
   const standingsBySpot = {};
 
-  spots.forEach(spot => {
-    const table = {}; // team -> stats
-    teams.forEach(team => {
+  divisionFormats[currentDivision].forEach(spotId => {
+    const spot = spotDefinitions[spotId];
+    const table = {};
+
+    divisions[currentDivision].forEach(team => {
       table[team] = {
         team,
         wins: 0,
         losses: 0,
         gamesWon: 0,
         gamesLost: 0,
-        headToHead: {} // opponent -> { wins, losses }
+        headToHead: {}
       };
     });
 
-    matches.forEach(match => {
-      const res = match.spots[spot.id];
+    const filteredMatches = matches.filter(m => m.division === currentDivision);
+
+    filteredMatches.forEach(match => {
+      const res = match.spots[spotId];
       if (!res || res.dnp) return;
 
       const teamA = match.teamA;
@@ -540,7 +701,7 @@ function computeStandingsBySpot() {
       }
     });
 
-    standingsBySpot[spot.id] = table;
+    standingsBySpot[spotId] = { spot, table };
   });
 
   return standingsBySpot;
@@ -557,18 +718,19 @@ function updateHeadToHead(entry, opponent, win) {
   }
 }
 
-// ----- SEEDING RENDER -----
-
 function renderSeeds(standingsBySpot) {
   const varsityContainer = document.getElementById("varsitySeeds");
   const jvContainer = document.getElementById("jvSeeds");
+
   varsityContainer.innerHTML = "";
   jvContainer.innerHTML = "";
 
-  spots.forEach(spot => {
-    const table = standingsBySpot[spot.id];
-    if (!table) return;
+  divisionFormats[currentDivision].forEach(spotId => {
+    const data = standingsBySpot[spotId];
+    if (!data) return;
 
+    const spot = data.spot;
+    const table = data.table;
     const teamsArray = Object.values(table);
 
     const activeTeams = teamsArray.filter(t => t.wins > 0 || t.losses > 0);
@@ -579,7 +741,7 @@ function renderSeeds(standingsBySpot) {
       t.gameDiff = t.gamesWon - t.gamesLost;
     });
 
-    const sorted = activeTeams.slice().sort((a, b) => compareTeamsWithTiebreaks(a, b, table));
+    const sorted = activeTeams.slice().sort((a, b) => compareTeamsWithTiebreaks(a, b));
 
     const wrapper = document.createElement("div");
     wrapper.className = "table-wrapper";
@@ -593,11 +755,13 @@ function renderSeeds(standingsBySpot) {
     const tbl = document.createElement("table");
     const thead = document.createElement("thead");
     const trh = document.createElement("tr");
+
     ["Seed", "Team", "Wins", "Losses", "Win %", "Game Diff", "Games Won"].forEach(h => {
       const th = document.createElement("th");
       th.textContent = h;
       trh.appendChild(th);
     });
+
     thead.appendChild(trh);
     tbl.appendChild(thead);
 
@@ -640,7 +804,7 @@ function renderSeeds(standingsBySpot) {
     tbl.appendChild(tbody);
     wrapper.appendChild(tbl);
 
-    const tieNote = detectTrueTies(sorted, table);
+    const tieNote = detectTrueTies(sorted);
     if (tieNote) {
       const noteDiv = document.createElement("div");
       noteDiv.className = "tie-note";
@@ -648,18 +812,20 @@ function renderSeeds(standingsBySpot) {
       wrapper.appendChild(noteDiv);
     }
 
-    if (spot.level === "varsity") varsityContainer.appendChild(wrapper);
-    else jvContainer.appendChild(wrapper);
+    if (spot.level === "varsity") {
+      varsityContainer.appendChild(wrapper);
+    } else if (spot.level === "jv") {
+      jvContainer.appendChild(wrapper);
+    }
   });
 }
 
-// ----- TIEBREAK COMPARISON -----
-
-function compareTeamsWithTiebreaks(a, b, table) {
+function compareTeamsWithTiebreaks(a, b) {
   if (b.winPct !== a.winPct) return b.winPct - a.winPct;
 
   const h2hA = a.headToHead[b.team] || { wins: 0, losses: 0 };
   const h2hB = b.headToHead[a.team] || { wins: 0, losses: 0 };
+
   const aH2HNet = h2hA.wins - h2hA.losses;
   const bH2HNet = h2hB.wins - h2hB.losses;
 
@@ -672,9 +838,7 @@ function compareTeamsWithTiebreaks(a, b, table) {
   return 0;
 }
 
-// ----- TRUE TIE DETECTION -----
-
-function detectTrueTies(sorted, table) {
+function detectTrueTies(sorted) {
   if (sorted.length < 2) return "";
 
   const ties = [];
@@ -687,10 +851,8 @@ function detectTrueTies(sorted, table) {
 
     const h2hA = a.headToHead[b.team] || { wins: 0, losses: 0 };
     const h2hB = b.headToHead[a.team] || { wins: 0, losses: 0 };
-    const aH2HNet = h2hA.wins - h2hA.losses;
-    const bH2HNet = h2hB.wins - h2hB.losses;
 
-    const sameH2H = aH2HNet === bH2HNet;
+    const sameH2H = (h2hA.wins - h2hA.losses) === (h2hB.wins - h2hB.losses);
     const sameGameDiff = a.gameDiff === b.gameDiff;
     const sameGamesWon = a.gamesWon === b.gamesWon;
 
@@ -708,7 +870,9 @@ function detectTrueTies(sorted, table) {
   return `True tie between: ${list}. All tiebreakers exhausted.`;
 }
 
-// ----- RENDER EVERYTHING -----
+// --------------------------------------------------
+// RENDER EVERYTHING
+// --------------------------------------------------
 
 function renderAll() {
   renderMatchesList();

@@ -3,14 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Tennis Seeding – Match Entry</title>
+    <title>Tennis Scheduler</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <h1>Middle School Boys</h1>
-        <h1>Tennis Match Entry & Seeding</h1>
+
+    <!-- Division Buttons -->
+    <section class="division-buttons">
+        <button class="division-btn" data-division="MS Boys">MS Boys</button>
+        <button class="division-btn" data-division="MS Girls">MS Girls</button>
+        <button class="division-btn" data-division="Orange Ball">Orange Ball</button>
+        <button class="division-btn" data-division="High School">High School</button>
+    </section>
+
+    <!-- Division Header -->
+    <header class="division-header">
+        <h1 id="divisionTitle">MS Boys Division</h1>
+        <h2 class="subtitle">Match Entry & Seeding</h2>
     </header>
 
     <main>
@@ -18,13 +28,16 @@
         <section class="card">
             <h2>Match Information</h2>
             <div class="row">
-                <label for="matchDate"><span>Date</span>
+                <label>
+                    <span>Date</span>
                     <input type="date" id="matchDate">
                 </label>
-                <label for="teamASelect"><span>Team A</span>
+                <label>
+                    <span>Team A</span>
                     <select id="teamASelect"></select>
                 </label>
-                <label for="teamBSelect"><span>Team B</span>
+                <label>
+                    <span>Team B</span>
                     <select id="teamBSelect"></select>
                 </label>
             </div>
@@ -32,13 +45,13 @@
 
         <!-- Varsity Section -->
         <section class="card">
-            <h2>Varsity (plays to 8)</h2>
+            <h2>Varsity</h2>
             <div id="varsitySpots" class="spots-grid"></div>
         </section>
 
         <!-- JV Section -->
         <section class="card">
-            <h2>JV (plays to 6)</h2>
+            <h2>JV</h2>
             <div id="jvSpots" class="spots-grid"></div>
         </section>
 

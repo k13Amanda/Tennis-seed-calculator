@@ -1,3 +1,5 @@
+/* GLOBAL */
+
 * {
   box-sizing: border-box;
 }
@@ -9,16 +11,59 @@ body {
   color: #222;
 }
 
-header {
-  background: #283593;
-  color: #fff;
-  padding: 1rem 1.5rem;
+/* DIVISION BUTTONS */
+
+.division-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  background: #e8eaf6;
+  border-bottom: 2px solid #c5cae9;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 1.6rem;
+.division-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  background: #3949ab;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.15s;
 }
+
+.division-btn:hover {
+  background: #303f9f;
+}
+
+.division-btn.active {
+  background: #1e88e5;
+}
+
+/* DIVISION HEADER */
+
+.division-header {
+  text-align: center;
+  padding: 1.5rem 1rem 1rem;
+}
+
+.division-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a237e;
+}
+
+.subtitle {
+  margin: 0.3rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #3949ab;
+}
+
+/* MAIN LAYOUT */
 
 main {
   max-width: 1100px;
@@ -62,6 +107,8 @@ input[type="number"] {
   font-size: 0.9rem;
   min-width: 140px;
 }
+
+/* SPOT CARDS */
 
 .spots-grid {
   display: grid;
@@ -110,6 +157,8 @@ input[type="number"] {
   gap: 0.25rem;
 }
 
+/* ACTION BUTTONS */
+
 .actions {
   display: flex;
   gap: 0.75rem;
@@ -137,6 +186,8 @@ button {
 button:hover {
   opacity: 0.9;
 }
+
+/* SEEDING TABLES */
 
 .table-wrapper {
   overflow-x: auto;
@@ -167,6 +218,8 @@ th {
   color: #c62828;
 }
 
+/* MATCH LIST */
+
 .match-item {
   border-bottom: 1px solid #eee;
   padding: 0.4rem 0;
@@ -187,12 +240,12 @@ th {
   cursor: pointer;
 }
 
-.match-header .edit-btn {
+.edit-btn {
   background: #0277bd;
   color: #fff;
 }
 
-.match-header .delete-btn {
+.delete-btn {
   background: #c62828;
   color: #fff;
 }
@@ -206,8 +259,14 @@ th {
   font-size: 0.8rem;
 }
 
+/* MOBILE */
+
 @media (max-width: 640px) {
   .row {
     flex-direction: column;
+  }
+
+  .division-buttons {
+    flex-wrap: wrap;
   }
 }
