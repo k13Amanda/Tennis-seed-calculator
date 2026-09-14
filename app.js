@@ -4,9 +4,8 @@ const teams = [
   "Farmington",
   "Bountiful",
   "Davis",
-  "Viewmont",
+  "Layton",
   "Weber",
-  "Layton"
 ];
 
 const spots = [
