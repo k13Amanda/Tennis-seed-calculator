@@ -7,14 +7,16 @@ const divisions = {
     "Bountiful/Viewmont MS Boys",
     "Farmington MS Boys",
     "Davis/Layton MS Boys",
-    "Northridge/CF/SY MS Boys"
+    "Northridge/CF/SY MS Boys",
+    "Weber MS Boys"
   ],
   "MS Girls": [
     "Bountiful MS Girls",
     "Viewmont MS Girls",
     "Farmington MS Girls",
     "Davis/Layton MS Girls",
-    "Northridge/CF/SY MS Girls"
+    "Northridge/CF/SY MS Girls",
+    "Weber MS Girls"
   ],
   "Orange Ball": [
     "Bountiful Orange",
@@ -29,7 +31,9 @@ const divisions = {
     "Centerville/Farmington/BO HS",
     "Kaysville/Layton HS",
     "Weber HS",
-    "Fremont HS"
+    "Fremont HS",
+    "Ridgeline",
+    "Cache Valley"
   ]
 };
 
