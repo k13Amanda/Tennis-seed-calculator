@@ -4,23 +4,23 @@
 
 const divisions = {
   "MS Boys": [
-    "Bountiful/Viewmont MS Boys",
+    "Bountiful MS Boys",
     "Farmington MS Boys",
-    "Davis/Layton MS Boys",
-    "Northridge/CF/SY MS Boys",
+    "Davis MS Boys",
+    "Clearfield MS Boys",
     "Weber MS Boys"
   ],
   "MS Girls": [
     "Bountiful MS Girls",
     "Viewmont MS Girls",
     "Farmington MS Girls",
-    "Davis/Layton MS Girls",
-    "Northridge/CF/SY MS Girls",
+    "Davis MS Girls",
+    "Clearfield MS Girls",
     "Weber MS Girls"
   ],
   "Orange Ball": [
     "Bountiful Orange",
-    "Farmington/Centerville Orange",
+    "Farmington Orange",
     "Kaysville Orange",
     "Layton Orange",
     "Clearfield Orange",
@@ -28,7 +28,7 @@ const divisions = {
     "Pleasant View Orange"
   ],
   "High School": [
-    "Centerville/Farmington/BO HS",
+    "Farmington/Bountiful HS",
     "Kaysville/Layton HS",
     "Weber HS",
     "Fremont HS",
